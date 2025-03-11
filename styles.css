@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-geist-mono {
+    font-family: var(--font-mono);
+}
+
+/* Active category styling */
+.active-category, .active-publisher-category {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+}
+
+/* Transitions */
+.details-toggle svg, .nav-link, .mobile-nav-link {
+    transition: all 0.2s ease;
+}
+
+/* Animation for details toggle */
+.details-toggle.active svg {
+    transform: rotate(180deg);
+}
+
+/* Smooth transition for section changes */
+main section {
+    transition: opacity 0.3s ease;
+}
+
+/* Card hover effect */
+.game-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* POV section styling enhancement */
+.bg-green-50 {
+    background-color: rgba(236, 253, 245, 0.6);
+}
+
+.border-green-100 {
+    border-color: rgba(167, 243, 208, 0.5);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d1d1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .game-card {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    
+    .game-card:hover {
+        transform: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* Print styles */
+@media print {
+    header, footer, button {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+    }
+    
+    main {
+        padding: 0;
+    }
+    
+    .game-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
